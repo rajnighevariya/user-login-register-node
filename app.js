@@ -13,10 +13,6 @@ app.use(express.static(path.join(__dirname, 'views')))
 
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
-
-
-let venderRoutes = require('./routes/venderRoutes');
-let equipmentRoutes = require('./routes/equipmentRoutes');
 let userRoutes = require('./routes/userRoutes');
 //mongodb connection
 mongodbCoonect()
@@ -32,8 +28,6 @@ app.use(express.urlencoded({ extended: false }))
 
 //router user 
 app.use('/user', userRoutes)
-app.use('/vender', venderRoutes)
-app.use('/equipment', equipmentRoutes)
 
 app.get('/', (req, res) => {
 
